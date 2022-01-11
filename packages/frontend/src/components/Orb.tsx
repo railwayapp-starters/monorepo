@@ -1,33 +1,29 @@
-import { useHelper } from "@react-three/drei";
 import { LightProps, MeshProps, useFrame } from "@react-three/fiber";
 import { Leva, useControls } from "leva";
 import React, { useRef } from "react";
 import * as THREE from "three";
-import { HemisphereLightHelper, Light, Mesh } from "three";
+import { Light, Mesh } from "three";
 import "twin.macro";
 import { Scene } from "../components/Scene";
-import { Page } from "../layouts/Page";
 import { clamp } from "../utils";
 
-const Orb: React.FC = () => {
+export const Orb: React.FC = props => {
   return (
-    <Page title="Orb">
+    <>
       <Leva hidden />
 
-      <Scene camera={{ position: [0, 0, 1.2] }} hideControls>
+      <Scene camera={{ position: [0, 0, 1.2] }} hideControls {...props}>
         <Lights />
         <SphereItem position={[0, 0, 0]} />
 
         {/* <Stats /> */}
       </Scene>
-    </Page>
+    </>
   );
 };
 
-export default Orb;
-
-const c1 = new THREE.Color("#ff1e00");
-// const c1 = new THREE.Color("#e900ff");
+// const c1 = new THREE.Color("#ff1e00");
+const c1 = new THREE.Color("#e900ff");
 const c2 = new THREE.Color("#ff9000");
 const c3 = new THREE.Color("#e900ff");
 
@@ -87,8 +83,8 @@ const SphereItem: React.FC<MeshProps> = props => {
   const mesh = useRef<Mesh>(null!);
 
   const { metalness, roughness } = useControls({
-    metalness: 0,
-    roughness: 0.48,
+    metalness: 0.2,
+    roughness: 0.6,
   });
 
   return (

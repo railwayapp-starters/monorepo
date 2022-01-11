@@ -8,7 +8,7 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "concurrently -n frontend -c magenta \"yarn workspace frontend dev\"",
+    "dev": "concurrently -n frontend,backend -c magenta,cyan \"yarn workspace frontend dev\" \"yarn workspace backend dev\"",
     "clean": "wsrun clean"
   },
   "dependencies": {},
