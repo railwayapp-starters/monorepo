@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "dev": "concurrently -n frontend,backend -c magenta,cyan \"yarn workspace frontend dev\" \"yarn workspace backend dev\"",
+    "build": "wsrun build",
     "clean": "wsrun clean"
   },
   "dependencies": {},
