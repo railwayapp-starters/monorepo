@@ -3,13 +3,11 @@ FROM node:alpine
 # Create app directory
 WORKDIR /usr/src/app
 
-COPY package.json yarn.lock ./
+# Bundle app source
+COPY . .
 
 # Install deps
 RUN yarn
-
-# Bundle app source
-COPY . .
 
 # Build
 RUN yarn build
