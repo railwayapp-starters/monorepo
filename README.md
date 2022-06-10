@@ -1,5 +1,3 @@
 # Monorepo
 
-Testing for monorepo stuff
-
-.....
+Testing for monorepo stuff.
